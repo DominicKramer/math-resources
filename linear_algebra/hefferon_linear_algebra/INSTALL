@@ -1,0 +1,63 @@
+This is _Linear Algebra_ by Jim Hefferon.  The release date is 2019.
+You are free to use this material, either under the GNU Free Documentation
+license or under a Creative Commons Share Alike license.
+
+If you want a hard copy then you can buy one on Amazon at basically
+the cost of media; google "amazon hefferon". (Make sure that you are
+getting edition four. There are old versions for sale but the new
+version costs the same and is better.)
+
+For more information, see the web site.
+  http://joshua.smcvt.edu/linearalgebra 
+
+
+INSTALL
+
+Put book.pdf and jhanswer.pdf in the same directory.  Point your pdf reader
+at book.pdf.
+
+
+COMPILING
+
+Why?
+
+Sigh.  This is what I did for Linux, Ubuntu 18.  If you have some
+other system such as Mac or Windows then I am unable to help, sorry.  For that
+matter, if you have Linux then I will not help you either, sorry.
+
+0) Install TeX Live.  You can get it from https://tug.org/texlive/ but
+I just did this in a terminal.
+  sudo apt-get install texlive-full
+
+1) Clone the linear-algebra archive.  
+  cd ~/Documents
+  git clone https://gitlab.com/jim.hefferon/linear-algebra.git
+
+Note that the subdirectory is called linear-algebra.  The scripts expect that.
+
+2) Install the luximono font.
+
+  cd ~/Downloads
+  wget http://tug.org/fonts/getnonfreefonts/install-getnonfreefonts 
+  sudo texlua install-getnonfreefonts
+  sudo getnonfreefonts --sys --all
+
+3) Now you can make the book.  
+    cd ~/Documents/linear-algebra
+    make
+(If it fails with a question mark prompt then probably you get out by
+typing `x' and <return>.) 
+
+At the end, you'll have book.pdf and jhanswer.pdf. You could have just
+skipped the compiling.
+
+To compile the version that is published in paper, change lines 10 and 11 in
+bookjhconcrete.sty to be this.
+  \booltrue{hardcopybool}  % uncomment this to make a book for publishing 
+  % \boolfalse{hardcopybool}  % the default  
+Then run ./make_book_for_web.sh.  You might also want to run this.
+  pdflatex cover
+
+
+Jim
+jhefferon@smcvt.edu

@@ -1,0 +1,20 @@
+\thispagestyle{empty} %
+% \covergraphic{}
+\newcommand{\titlepagetext}[2]{%
+  \color{black}\fontsize{#1pt}{8pt}{\fontfamily{ugq}\selectfont #2}%
+}
+\newpage
+\setlength{\unitlength}{1in}
+\noindent\begin{picture}(0,0)
+  \put(0.75,-2){\centering{\begin{tabular}{c}
+                          \titlepagetext{36}{Linear Algebra} \\[.35in]
+                          \titlepagetext{18}{Jim Hef{}feron} \\[.05in]
+                          \titlepagetext{18}{Saint Michael's College}
+                        \end{tabular}}}
+  \put(2.25,-7){\begin{tabular}{l}
+                  Fourth edition, \input{publicationdate} \\
+                  \texttt{http://joshua.smcvt.edu/linearalgebra}
+               \end{tabular}}
+\end{picture}
+\newpage
+\input symlist
